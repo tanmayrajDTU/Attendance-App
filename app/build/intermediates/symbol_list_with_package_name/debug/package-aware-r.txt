@@ -1159,7 +1159,6 @@ id spinner
 id spinner2
 id spinner3
 id spinner4
-id spinner5
 id spline
 id split_action_bar
 id spread

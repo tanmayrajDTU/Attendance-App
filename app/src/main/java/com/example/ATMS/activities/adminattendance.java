@@ -38,13 +38,15 @@ public class adminattendance extends AppCompatActivity {
 
         listView = (ListView) findViewById(R.id.list);
         date = (EditText) findViewById(R.id.date);
-        teacher_id = "Tanmay";
+        //teacher_id = "Tanmay";
     }
     public void viewList(View v) {
 
         Userlist.clear();
         dbStudent = ref.child("Student");
-        dbStudent.orderByChild("classes").equalTo("SE").addListenerForSingleValueEvent(new ValueEventListener() {
+        //it is able to print all the attendance branch after branch
+        //branch selector still left
+        dbStudent.orderByChild("classes").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 for (DataSnapshot dsp : dataSnapshot.getChildren()) {
@@ -74,9 +76,7 @@ public class adminattendance extends AppCompatActivity {
                 public void onDataChange(DataSnapshot dataSnapshot) {
                     for(DataSnapshot dsp : dataSnapshot.getChildren()) {
                         String p1 = dsp.getValue().toString();
-                        if((p1.equals("A / "+teacher_id))||(p1.equals("P / "+teacher_id))){
-                            Studentlist.add(dataSnapshot.getKey().toString() + "            " + p1.substring(0,1) +"        "+dsp.getKey());
-                        }
+                        Studentlist.add(dataSnapshot.getKey().toString() + "            " + p1.substring(0,1) +"        "+dsp.getKey());
                     }
                     list(Studentlist);
 

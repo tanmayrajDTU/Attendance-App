@@ -16,28 +16,28 @@
         "source": "C:\\Users\\admin\\Desktop\\Attendance app\\ATMS\\app\\build\\generated\\res\\pngs\\debug\\drawable-mdpi\\ic_record.png"
     },
     {
-        "merged": "C:\\Users\\admin\\Desktop\\Attendance app\\ATMS\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21_ic_launcher_background.xml.flat",
-        "source": "C:\\Users\\admin\\Desktop\\Attendance app\\ATMS\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_launcher_background.xml"
+        "merged": "C:\\Users\\admin\\Desktop\\Attendance app\\ATMS\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_addteacher.xml.flat",
+        "source": "C:\\Users\\admin\\Desktop\\Attendance app\\ATMS\\app\\src\\main\\res\\layout\\activity_addteacher.xml"
     },
     {
         "merged": "C:\\Users\\admin\\Desktop\\Attendance app\\ATMS\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_ic_padlock.png.flat",
         "source": "C:\\Users\\admin\\Desktop\\Attendance app\\ATMS\\app\\build\\generated\\res\\pngs\\debug\\drawable-mdpi\\ic_padlock.png"
     },
     {
-        "merged": "C:\\Users\\admin\\Desktop\\Attendance app\\ATMS\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_addteacher.xml.flat",
-        "source": "C:\\Users\\admin\\Desktop\\Attendance app\\ATMS\\app\\src\\main\\res\\layout\\activity_addteacher.xml"
+        "merged": "C:\\Users\\admin\\Desktop\\Attendance app\\ATMS\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21_ic_launcher_background.xml.flat",
+        "source": "C:\\Users\\admin\\Desktop\\Attendance app\\ATMS\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_launcher_background.xml"
     },
     {
         "merged": "C:\\Users\\admin\\Desktop\\Attendance app\\ATMS\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ic_padlock.png.flat",
         "source": "C:\\Users\\admin\\Desktop\\Attendance app\\ATMS\\app\\build\\generated\\res\\pngs\\debug\\drawable-hdpi\\ic_padlock.png"
     },
     {
-        "merged": "C:\\Users\\admin\\Desktop\\Attendance app\\ATMS\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ic_path.png.flat",
-        "source": "C:\\Users\\admin\\Desktop\\Attendance app\\ATMS\\app\\build\\generated\\res\\pngs\\debug\\drawable-hdpi\\ic_path.png"
-    },
-    {
         "merged": "C:\\Users\\admin\\Desktop\\Attendance app\\ATMS\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_teacher.png.flat",
         "source": "C:\\Users\\admin\\Desktop\\Attendance app\\ATMS\\app\\build\\generated\\res\\pngs\\debug\\drawable-xhdpi\\teacher.png"
+    },
+    {
+        "merged": "C:\\Users\\admin\\Desktop\\Attendance app\\ATMS\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ic_path.png.flat",
+        "source": "C:\\Users\\admin\\Desktop\\Attendance app\\ATMS\\app\\build\\generated\\res\\pngs\\debug\\drawable-hdpi\\ic_path.png"
     },
     {
         "merged": "C:\\Users\\admin\\Desktop\\Attendance app\\ATMS\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_ic_teacher.png.flat",
