@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Attendance Tracking Management System</string>
+    <string name="submit">Submit</string>
+    <array name="classes">
+        <item>select Class</item>>
+        <item>SE</item>
+        <item>CSE</item>
+        <item>CE</item>
+        <item>E</item>
+        <item>D</item>
+
+    </array>
+    <array name="periods">
+        <item>p1</item>
+        <item>p2</item>
+
+    </array>
+</resources>

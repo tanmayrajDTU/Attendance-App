@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.ATMS">
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/icon"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/icon"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".activities.adminattendance"></activity>
+        <activity android:name=".activities.studentAttendanceActivity" />
+        <activity android:name=".activities.loginteacherActivity" />
+        <activity android:name=".activities.loginstudent" />
+        <activity android:name=".activities.adminLoginActivity" />
+        <activity android:name=".activities.DashboardActivity" />
+        <activity android:name=".activities.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".activities.LoginActivity" />
+        <activity android:name=".activities.teacherlogin" />
+        <activity android:name=".activities.studentlogin" />
+        <activity android:name=".activities.adminlogin" />
+        <activity android:name=".activities.addteacher" />
+        <activity android:name=".activities.addstudent" />
+        <activity android:name=".activities.takeAttendance" />
+        <activity android:name=".activities.admin_attendanceSheet" />
+        <activity android:name=".activities.teacher_attendanceSheet" />
+        <activity android:name=".activities.student_attendance_sheet" />
+    </application>
+
+</manifest>

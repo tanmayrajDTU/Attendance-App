@@ -1,0 +1,153 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.example.ATMS"
+4    android:versionCode="1"
+5    android:versionName="1.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="16"
+8-->C:\Users\admin\Desktop\Attendance app\ATMS\app\src\main\AndroidManifest.xml
+9        android:targetSdkVersion="28" />
+9-->C:\Users\admin\Desktop\Attendance app\ATMS\app\src\main\AndroidManifest.xml
+10
+11    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+11-->C:\Users\admin\Desktop\Attendance app\ATMS\app\src\main\AndroidManifest.xml:5:5-81
+11-->C:\Users\admin\Desktop\Attendance app\ATMS\app\src\main\AndroidManifest.xml:5:22-78
+12    <uses-permission android:name="android.permission.INTERNET" />
+12-->C:\Users\admin\Desktop\Attendance app\ATMS\app\src\main\AndroidManifest.xml:6:5-67
+12-->C:\Users\admin\Desktop\Attendance app\ATMS\app\src\main\AndroidManifest.xml:6:22-64
+13
+14    <!-- Although the *SdkVersion is captured in gradle build files, this is required for non gradle builds -->
+15    <!-- <uses-sdk android:minSdkVersion="14"/> -->
+16    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+16-->[com.google.firebase:firebase-database:19.5.1] C:\Users\admin\.gradle\caches\transforms-2\files-2.1\fc103de11ba45e8031c7a2ff05cc918b\firebase-database-19.5.1\AndroidManifest.xml:25:5-79
+16-->[com.google.firebase:firebase-database:19.5.1] C:\Users\admin\.gradle\caches\transforms-2\files-2.1\fc103de11ba45e8031c7a2ff05cc918b\firebase-database-19.5.1\AndroidManifest.xml:25:22-76
+17
+18    <application
+18-->C:\Users\admin\Desktop\Attendance app\ATMS\app\src\main\AndroidManifest.xml:8:5-38:19
+19        android:allowBackup="true"
+19-->C:\Users\admin\Desktop\Attendance app\ATMS\app\src\main\AndroidManifest.xml:9:9-35
+20        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+20-->[androidx.core:core:1.3.1] C:\Users\admin\.gradle\caches\transforms-2\files-2.1\cdfea8f3da9d3d8e26bbb73a40c2de98\core-1.3.1\AndroidManifest.xml:24:18-86
+21        android:debuggable="true"
+22        android:icon="@drawable/icon"
+22-->C:\Users\admin\Desktop\Attendance app\ATMS\app\src\main\AndroidManifest.xml:10:9-38
+23        android:label="@string/app_name"
+23-->C:\Users\admin\Desktop\Attendance app\ATMS\app\src\main\AndroidManifest.xml:11:9-41
+24        android:roundIcon="@drawable/icon"
+24-->C:\Users\admin\Desktop\Attendance app\ATMS\app\src\main\AndroidManifest.xml:12:9-43
+25        android:supportsRtl="true"
+25-->C:\Users\admin\Desktop\Attendance app\ATMS\app\src\main\AndroidManifest.xml:13:9-35
+26        android:testOnly="true"
+27        android:theme="@style/AppTheme" >
+27-->C:\Users\admin\Desktop\Attendance app\ATMS\app\src\main\AndroidManifest.xml:14:9-40
+28        <activity android:name="com.example.ATMS.activities.adminattendance" />
+28-->C:\Users\admin\Desktop\Attendance app\ATMS\app\src\main\AndroidManifest.xml:15:9-73
+28-->C:\Users\admin\Desktop\Attendance app\ATMS\app\src\main\AndroidManifest.xml:15:19-61
+29        <activity android:name="com.example.ATMS.activities.studentAttendanceActivity" />
+29-->C:\Users\admin\Desktop\Attendance app\ATMS\app\src\main\AndroidManifest.xml:16:9-74
+29-->C:\Users\admin\Desktop\Attendance app\ATMS\app\src\main\AndroidManifest.xml:16:19-71
+30        <activity android:name="com.example.ATMS.activities.loginteacherActivity" />
+30-->C:\Users\admin\Desktop\Attendance app\ATMS\app\src\main\AndroidManifest.xml:17:9-69
+30-->C:\Users\admin\Desktop\Attendance app\ATMS\app\src\main\AndroidManifest.xml:17:19-66
+31        <activity android:name="com.example.ATMS.activities.loginstudent" />
+31-->C:\Users\admin\Desktop\Attendance app\ATMS\app\src\main\AndroidManifest.xml:18:9-61
+31-->C:\Users\admin\Desktop\Attendance app\ATMS\app\src\main\AndroidManifest.xml:18:19-58
+32        <activity android:name="com.example.ATMS.activities.adminLoginActivity" />
+32-->C:\Users\admin\Desktop\Attendance app\ATMS\app\src\main\AndroidManifest.xml:19:9-67
+32-->C:\Users\admin\Desktop\Attendance app\ATMS\app\src\main\AndroidManifest.xml:19:19-64
+33        <activity android:name="com.example.ATMS.activities.DashboardActivity" />
+33-->C:\Users\admin\Desktop\Attendance app\ATMS\app\src\main\AndroidManifest.xml:20:9-66
+33-->C:\Users\admin\Desktop\Attendance app\ATMS\app\src\main\AndroidManifest.xml:20:19-63
+34        <activity android:name="com.example.ATMS.activities.MainActivity" >
+34-->C:\Users\admin\Desktop\Attendance app\ATMS\app\src\main\AndroidManifest.xml:21:9-27:20
+34-->C:\Users\admin\Desktop\Attendance app\ATMS\app\src\main\AndroidManifest.xml:21:19-58
+35            <intent-filter>
+35-->C:\Users\admin\Desktop\Attendance app\ATMS\app\src\main\AndroidManifest.xml:22:13-26:29
+36                <action android:name="android.intent.action.MAIN" />
+36-->C:\Users\admin\Desktop\Attendance app\ATMS\app\src\main\AndroidManifest.xml:23:17-69
+36-->C:\Users\admin\Desktop\Attendance app\ATMS\app\src\main\AndroidManifest.xml:23:25-66
+37
+38                <category android:name="android.intent.category.LAUNCHER" />
+38-->C:\Users\admin\Desktop\Attendance app\ATMS\app\src\main\AndroidManifest.xml:25:17-77
+38-->C:\Users\admin\Desktop\Attendance app\ATMS\app\src\main\AndroidManifest.xml:25:27-74
+39            </intent-filter>
+40        </activity>
+41        <activity android:name="com.example.ATMS.activities.LoginActivity" />
+41-->C:\Users\admin\Desktop\Attendance app\ATMS\app\src\main\AndroidManifest.xml:28:9-62
+41-->C:\Users\admin\Desktop\Attendance app\ATMS\app\src\main\AndroidManifest.xml:28:19-59
+42        <activity android:name="com.example.ATMS.activities.teacherlogin" />
+42-->C:\Users\admin\Desktop\Attendance app\ATMS\app\src\main\AndroidManifest.xml:29:9-61
+42-->C:\Users\admin\Desktop\Attendance app\ATMS\app\src\main\AndroidManifest.xml:29:19-58
+43        <activity android:name="com.example.ATMS.activities.studentlogin" />
+43-->C:\Users\admin\Desktop\Attendance app\ATMS\app\src\main\AndroidManifest.xml:30:9-61
+43-->C:\Users\admin\Desktop\Attendance app\ATMS\app\src\main\AndroidManifest.xml:30:19-58
+44        <activity android:name="com.example.ATMS.activities.adminlogin" />
+44-->C:\Users\admin\Desktop\Attendance app\ATMS\app\src\main\AndroidManifest.xml:31:9-59
+44-->C:\Users\admin\Desktop\Attendance app\ATMS\app\src\main\AndroidManifest.xml:31:19-56
+45        <activity android:name="com.example.ATMS.activities.addteacher" />
+45-->C:\Users\admin\Desktop\Attendance app\ATMS\app\src\main\AndroidManifest.xml:32:9-59
+45-->C:\Users\admin\Desktop\Attendance app\ATMS\app\src\main\AndroidManifest.xml:32:19-56
+46        <activity android:name="com.example.ATMS.activities.addstudent" />
+46-->C:\Users\admin\Desktop\Attendance app\ATMS\app\src\main\AndroidManifest.xml:33:9-59
+46-->C:\Users\admin\Desktop\Attendance app\ATMS\app\src\main\AndroidManifest.xml:33:19-56
+47        <activity android:name="com.example.ATMS.activities.takeAttendance" />
+47-->C:\Users\admin\Desktop\Attendance app\ATMS\app\src\main\AndroidManifest.xml:34:9-63
+47-->C:\Users\admin\Desktop\Attendance app\ATMS\app\src\main\AndroidManifest.xml:34:19-60
+48        <activity android:name="com.example.ATMS.activities.admin_attendanceSheet" />
+48-->C:\Users\admin\Desktop\Attendance app\ATMS\app\src\main\AndroidManifest.xml:35:9-70
+48-->C:\Users\admin\Desktop\Attendance app\ATMS\app\src\main\AndroidManifest.xml:35:19-67
+49        <activity android:name="com.example.ATMS.activities.teacher_attendanceSheet" />
+49-->C:\Users\admin\Desktop\Attendance app\ATMS\app\src\main\AndroidManifest.xml:36:9-72
+49-->C:\Users\admin\Desktop\Attendance app\ATMS\app\src\main\AndroidManifest.xml:36:19-69
+50        <activity android:name="com.example.ATMS.activities.student_attendance_sheet" />
+50-->C:\Users\admin\Desktop\Attendance app\ATMS\app\src\main\AndroidManifest.xml:37:9-73
+50-->C:\Users\admin\Desktop\Attendance app\ATMS\app\src\main\AndroidManifest.xml:37:19-70
+51
+52        <service
+52-->[com.google.firebase:firebase-database:19.5.1] C:\Users\admin\.gradle\caches\transforms-2\files-2.1\fc103de11ba45e8031c7a2ff05cc918b\firebase-database-19.5.1\AndroidManifest.xml:29:9-35:19
+53            android:name="com.google.firebase.components.ComponentDiscoveryService"
+53-->[com.google.firebase:firebase-database:19.5.1] C:\Users\admin\.gradle\caches\transforms-2\files-2.1\fc103de11ba45e8031c7a2ff05cc918b\firebase-database-19.5.1\AndroidManifest.xml:30:13-84
+54            android:directBootAware="true"
+54-->[com.google.firebase:firebase-common:19.3.1] C:\Users\admin\.gradle\caches\transforms-2\files-2.1\62f1c008bd3386b96de7a0882fb3ee98\firebase-common-19.3.1\AndroidManifest.xml:35:13-43
+55            android:exported="false" >
+55-->[com.google.firebase:firebase-database:19.5.1] C:\Users\admin\.gradle\caches\transforms-2\files-2.1\fc103de11ba45e8031c7a2ff05cc918b\firebase-database-19.5.1\AndroidManifest.xml:31:13-37
+56            <meta-data
+56-->[com.google.firebase:firebase-database:19.5.1] C:\Users\admin\.gradle\caches\transforms-2\files-2.1\fc103de11ba45e8031c7a2ff05cc918b\firebase-database-19.5.1\AndroidManifest.xml:32:13-34:85
+57                android:name="com.google.firebase.components:com.google.firebase.database.DatabaseRegistrar"
+57-->[com.google.firebase:firebase-database:19.5.1] C:\Users\admin\.gradle\caches\transforms-2\files-2.1\fc103de11ba45e8031c7a2ff05cc918b\firebase-database-19.5.1\AndroidManifest.xml:33:17-109
+58                android:value="com.google.firebase.components.ComponentRegistrar" />
+58-->[com.google.firebase:firebase-database:19.5.1] C:\Users\admin\.gradle\caches\transforms-2\files-2.1\fc103de11ba45e8031c7a2ff05cc918b\firebase-database-19.5.1\AndroidManifest.xml:34:17-82
+59        </service>
+60
+61        <activity
+61-->[com.google.android.gms:play-services-base:17.0.0] C:\Users\admin\.gradle\caches\transforms-2\files-2.1\4d0717210b0687cad87212665e90c4c5\play-services-base-17.0.0\AndroidManifest.xml:23:9-26:75
+62            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+62-->[com.google.android.gms:play-services-base:17.0.0] C:\Users\admin\.gradle\caches\transforms-2\files-2.1\4d0717210b0687cad87212665e90c4c5\play-services-base-17.0.0\AndroidManifest.xml:24:13-79
+63            android:exported="false"
+63-->[com.google.android.gms:play-services-base:17.0.0] C:\Users\admin\.gradle\caches\transforms-2\files-2.1\4d0717210b0687cad87212665e90c4c5\play-services-base-17.0.0\AndroidManifest.xml:25:13-37
+64            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+64-->[com.google.android.gms:play-services-base:17.0.0] C:\Users\admin\.gradle\caches\transforms-2\files-2.1\4d0717210b0687cad87212665e90c4c5\play-services-base-17.0.0\AndroidManifest.xml:26:13-72
+65
+66        <provider
+66-->[com.google.firebase:firebase-common:19.3.1] C:\Users\admin\.gradle\caches\transforms-2\files-2.1\62f1c008bd3386b96de7a0882fb3ee98\firebase-common-19.3.1\AndroidManifest.xml:26:9-31:39
+67            android:name="com.google.firebase.provider.FirebaseInitProvider"
+67-->[com.google.firebase:firebase-common:19.3.1] C:\Users\admin\.gradle\caches\transforms-2\files-2.1\62f1c008bd3386b96de7a0882fb3ee98\firebase-common-19.3.1\AndroidManifest.xml:27:13-77
+68            android:authorities="com.example.ATMS.firebaseinitprovider"
+68-->[com.google.firebase:firebase-common:19.3.1] C:\Users\admin\.gradle\caches\transforms-2\files-2.1\62f1c008bd3386b96de7a0882fb3ee98\firebase-common-19.3.1\AndroidManifest.xml:28:13-72
+69            android:directBootAware="true"
+69-->[com.google.firebase:firebase-common:19.3.1] C:\Users\admin\.gradle\caches\transforms-2\files-2.1\62f1c008bd3386b96de7a0882fb3ee98\firebase-common-19.3.1\AndroidManifest.xml:29:13-43
+70            android:exported="false"
+70-->[com.google.firebase:firebase-common:19.3.1] C:\Users\admin\.gradle\caches\transforms-2\files-2.1\62f1c008bd3386b96de7a0882fb3ee98\firebase-common-19.3.1\AndroidManifest.xml:30:13-37
+71            android:initOrder="100" />
+71-->[com.google.firebase:firebase-common:19.3.1] C:\Users\admin\.gradle\caches\transforms-2\files-2.1\62f1c008bd3386b96de7a0882fb3ee98\firebase-common-19.3.1\AndroidManifest.xml:31:13-36
+72
+73        <meta-data
+73-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\admin\.gradle\caches\transforms-2\files-2.1\c03ff831f337462821d0a5c03495569e\play-services-basement-17.0.0\AndroidManifest.xml:23:9-25:69
+74            android:name="com.google.android.gms.version"
+74-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\admin\.gradle\caches\transforms-2\files-2.1\c03ff831f337462821d0a5c03495569e\play-services-basement-17.0.0\AndroidManifest.xml:24:13-58
+75            android:value="@integer/google_play_services_version" />
+75-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\admin\.gradle\caches\transforms-2\files-2.1\c03ff831f337462821d0a5c03495569e\play-services-basement-17.0.0\AndroidManifest.xml:25:13-66
+76    </application>
+77
+78</manifest>
