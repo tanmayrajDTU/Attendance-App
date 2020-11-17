@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
@@ -21,6 +22,8 @@ import java.util.ArrayList;
 public class adminattendance extends AppCompatActivity {
     ListView listView;
     String sid, teacher_id;
+    Spinner class_name;
+    String classes;
 
 
     EditText date;
@@ -37,6 +40,7 @@ public class adminattendance extends AppCompatActivity {
         setContentView(R.layout.activity_adminattendance);
 
         listView = (ListView) findViewById(R.id.list);
+        class_name = (Spinner) findViewById(R.id.spinner13);
         date = (EditText) findViewById(R.id.date);
         //teacher_id = "Tanmay";
     }
@@ -44,9 +48,9 @@ public class adminattendance extends AppCompatActivity {
 
         Userlist.clear();
         dbStudent = ref.child("Student");
-        //it is able to print all the attendance branch after branch
-        //branch selector still left
-        dbStudent.orderByChild("classes").addListenerForSingleValueEvent(new ValueEventListener() {
+        //Admin is now able to print all the attendance branch wise
+        classes = class_name.getSelectedItem().toString();
+        dbStudent.orderByChild("classes").equalTo(classes).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 for (DataSnapshot dsp : dataSnapshot.getChildren()) {

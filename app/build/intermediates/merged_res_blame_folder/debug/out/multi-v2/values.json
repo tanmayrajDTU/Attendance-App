@@ -68,12 +68,12 @@
                 {
                     "source": "C:\\Users\\admin\\Desktop\\Attendance app\\ATMS\\app\\src\\main\\res\\values\\strings.xml",
                     "from": {
-                        "startLines": "-1,12,-1,-1",
-                        "startColumns": "-1,4,-1,-1",
-                        "startOffsets": "-1,340,-1,-1",
-                        "endLines": "-1,16,-1,-1",
-                        "endColumns": "-1,12,-1,-1",
-                        "endOffsets": "-1,428,-1,-1"
+                        "startLines": "3,-1,-1,-1",
+                        "startColumns": "4,-1,-1,-1",
+                        "startOffsets": "136,-1,-1,-1",
+                        "endLines": "11,-1,-1,-1",
+                        "endColumns": "12,-1,-1,-1",
+                        "endOffsets": "334,-1,-1,-1"
                     },
                     "to": {
                         "startLines": "2,11,598,627",
