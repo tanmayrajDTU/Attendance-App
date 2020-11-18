@@ -44,7 +44,7 @@
         android:layout_below="@id/textView1"
         android:layout_marginTop="49dp"
         android:layout_marginBottom="10dp"
-        android:background="@drawable/rectangle2"
+        android:background="#000000"
         android:gravity="center"
         android:orientation="vertical"
         android:padding="10dp"
@@ -115,9 +115,11 @@
                             android:layout_height="wrap_content"
                             android:layout_below="@id/imageView1"
                             android:layout_centerInParent="true"
-                            android:layout_marginTop="10dp"
-                            android:layout_marginBottom="10dp"
+                            android:layout_marginTop="2dp"
+                            android:layout_marginBottom="2dp"
                             android:text="Take Attendance"
+                            android:textAlignment="center"
+                            android:gravity="center"
                             android:textColor="#fff"
                             android:textSize="16sp"
                             android:textStyle="bold" />
@@ -157,8 +159,10 @@
                             android:layout_height="wrap_content"
                             android:layout_below="@id/imageView2"
                             android:layout_centerInParent="true"
-                            android:layout_marginTop="10dp"
-                            android:layout_marginBottom="10dp"
+                            android:layout_marginTop="3dp"
+                            android:layout_marginBottom="3dp"
+                            android:textAlignment="center"
+                            android:gravity="center"
                             android:text="Previous Records"
                             android:textColor="#fff"
                             android:textSize="16sp"
@@ -170,6 +174,48 @@
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:background="@android:color/transparent" />
+                    </RelativeLayout>
+
+                </androidx.cardview.widget.CardView>
+                <androidx.cardview.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="5dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="#00CCFF">
+
+                        <ImageView
+                            android:id="@+id/imageView3"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:layout_centerInParent="true"
+                            android:src="@drawable/ic_profile_pic"
+                            />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/imageView3"
+                            android:layout_centerInParent="true"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:text="Profile"
+                            android:textColor="#fff"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+
+                        <Button
+                            android:id="@+id/buttonProfile_t"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@android:color/transparent"
+                            android:onClick="profile_t" />
                     </RelativeLayout>
 
                 </androidx.cardview.widget.CardView>

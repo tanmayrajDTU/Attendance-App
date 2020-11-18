@@ -996,6 +996,7 @@ id buttonInfo
 id buttonLogout
 id buttonPanel
 id buttonProfile_s
+id buttonProfile_t
 id buttonStudent
 id buttonStudentAdd
 id buttonTeacher

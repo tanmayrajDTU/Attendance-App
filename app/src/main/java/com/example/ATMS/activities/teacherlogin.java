@@ -2,6 +2,8 @@ package com.example.ATMS.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
+
+import androidx.appcompat.app.AlertDialog;
 import androidx.core.app.ActivityCompat;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -13,16 +15,25 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.ATMS.R;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import static android.widget.Toast.LENGTH_LONG;
+
 public class teacherlogin extends AppCompatActivity implements AdapterView.OnItemSelectedListener{
     String item;
     String message;
     Toolbar mToolbar;
+    DatabaseReference ref = FirebaseDatabase.getInstance().getReference();
+    DatabaseReference dbTeacher;
     private static long back_pressed;
     String date = new SimpleDateFormat("dd-MM-yyyy").format(new Date());
     @Override
@@ -102,5 +113,26 @@ public class teacherlogin extends AppCompatActivity implements AdapterView.OnIte
             Toast.makeText(getBaseContext(), "Press once again to exit", Toast.LENGTH_SHORT).show();
             back_pressed = System.currentTimeMillis();
         }
+    }
+    public void profile_t(View view){
+        final AlertDialog alertDialog = new AlertDialog.Builder(this).create(); //Read Update
+        alertDialog.setTitle("Teacher Details");
+        final String[] message1 = new String[1];
+        dbTeacher = ref.child("Teacher");
+        dbTeacher.orderByChild("tid").equalTo(message).addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                message1[0] =dataSnapshot.getValue().toString();
+                alertDialog.setMessage(message1[0]);
+                alertDialog.show();
+                //Toast.makeText(getApplicationContext(),message,Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                Toast.makeText(getApplicationContext(), "something went wrong", LENGTH_LONG).show();
+            }
+
+        });
     }
 }
