@@ -870,6 +870,7 @@ drawable ic_logout
 drawable ic_padlock
 drawable ic_path
 drawable ic_person_black_24dp
+drawable ic_profile_pic
 drawable ic_record
 drawable ic_record1
 drawable ic_student
@@ -994,6 +995,7 @@ id buttonGenrateAttendance
 id buttonInfo
 id buttonLogout
 id buttonPanel
+id buttonProfile_s
 id buttonStudent
 id buttonStudentAdd
 id buttonTeacher

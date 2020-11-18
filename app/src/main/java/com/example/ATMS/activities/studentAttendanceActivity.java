@@ -41,7 +41,7 @@ public class studentAttendanceActivity extends AppCompatActivity {
         Bundle bundle1 = getIntent().getExtras();
         sid = bundle1.getString("sid");
         teacher_id = "123";
-        Toast.makeText(getApplicationContext(),"hello",Toast.LENGTH_SHORT).show();
+        //Toast.makeText(getApplicationContext(),"hello",Toast.LENGTH_SHORT).show();
     }
     public void viewList(View v) {
 
@@ -54,7 +54,7 @@ public class studentAttendanceActivity extends AppCompatActivity {
                     Userlist.add(dsp.child("sid").getValue().toString());
                 }
                 display_list(Userlist);
-                Toast.makeText(getApplicationContext(),"hello12",Toast.LENGTH_SHORT).show();
+                //Toast.makeText(getApplicationContext(),"hello12",Toast.LENGTH_SHORT).show();
 
             }
 

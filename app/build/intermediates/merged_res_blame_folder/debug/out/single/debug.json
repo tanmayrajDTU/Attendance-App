@@ -236,6 +236,10 @@
         "source": "C:\\Users\\admin\\Desktop\\Attendance app\\ATMS\\app\\src\\main\\res\\drawable\\date.xml"
     },
     {
+        "merged": "C:\\Users\\admin\\Desktop\\Attendance app\\ATMS\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_profile_pic.png.flat",
+        "source": "C:\\Users\\admin\\Desktop\\Attendance app\\ATMS\\app\\src\\main\\res\\drawable\\ic_profile_pic.png"
+    },
+    {
         "merged": "C:\\Users\\admin\\Desktop\\Attendance app\\ATMS\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi_ic_check.png.flat",
         "source": "C:\\Users\\admin\\Desktop\\Attendance app\\ATMS\\app\\build\\generated\\res\\pngs\\debug\\drawable-ldpi\\ic_check.png"
     },
