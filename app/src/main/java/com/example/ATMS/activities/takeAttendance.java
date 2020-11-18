@@ -151,7 +151,7 @@ public class takeAttendance extends AppCompatActivity {
             dbAttendance = ref.child("attendance").child(date);
 
             for (String item : selectedItems) {
-                Toast.makeText(this, "Attendance created Successfully", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(this, "Attendance created Successfully", Toast.LENGTH_SHORT).show();
                 nonselectedItems.remove(item);
                 dbAttendance.child(item).child(periodno).setValue("P" + " / " + teacher_id);
                 if (selItems == "")
@@ -164,11 +164,12 @@ public class takeAttendance extends AppCompatActivity {
 
             //for making absent
             for (String item : nonselectedItems) {
-                Toast.makeText(this, "Attendance created Successfully", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(this, "Attendance created Successfully", Toast.LENGTH_SHORT).show();
                 dbAttendance.child(item).child(periodno).setValue("A" + " / " + teacher_id);
                 //Toast.makeText(this, "absentees:" + nonselectedItems, Toast.LENGTH_LONG).show();
 
             }
+            Toast.makeText(this, "Attendance created Successfully", Toast.LENGTH_LONG).show();
         }
 
 
