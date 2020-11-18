@@ -77,15 +77,15 @@ public class adminlogin extends AppCompatActivity {
 
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                String sid,P1="-",P2="-";
-                Attendance_sheet a = new Attendance_sheet(P1,P2);
+                String sid,P1="-",P2="-",P3="-",P4="-",P5="-",P6="-";
+                Attendance_sheet a = new Attendance_sheet(P1,P2,P3,P4,P5,P6);
 
                 for (DataSnapshot dsp : dataSnapshot.getChildren()) {
                     sid=dsp.child("sid").getValue().toString();
                     dbAttendance.child(date).child(sid).setValue(a);
 
                 }
-                Toast.makeText(getApplicationContext(),"Successfully Created "+date+" db", Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(),"Successfully Deleted "+date+" db", Toast.LENGTH_LONG).show();
             }
 
 

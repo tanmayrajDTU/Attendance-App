@@ -56,9 +56,9 @@ public class teacherlogin extends AppCompatActivity implements AdapterView.OnIte
         List<String> categories = new ArrayList<String>();
         categories.add("SE");
         categories.add("CSE");
-        categories.add("CE");
-        categories.add("E");
-        categories.add("D");
+        categories.add("IT");
+        categories.add("ECE");
+        categories.add("ME");
 
         ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, categories);
         dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);

@@ -21,7 +21,7 @@ public class student_attendance_sheet extends AppCompatActivity {
   public static int count=1,P=1,A=1;
     float average= (float) 0.0;
     TextView t;
-    String avg,p1,p2;
+    String avg,p1,p2,p3,p4,p5,p6;
     String student_id;
     ArrayList dates = new ArrayList<>();;
     DatabaseReference ref = FirebaseDatabase.getInstance().getReference();
@@ -40,7 +40,7 @@ public class student_attendance_sheet extends AppCompatActivity {
         student_id = bundle.getString("sid");
         t.setText(student_id);
         dates.clear();
-        dates.add("       Date          "+"p1  "+"p2  ");
+        dates.add("       Date          "+"p1  "+"p2  "+"p3  "+"p4  "+"p5  "+"p6  ");
 
             dbAttendance = ref.child("attendance");
             dbAttendance.addListenerForSingleValueEvent(new ValueEventListener() {
@@ -49,16 +49,19 @@ public class student_attendance_sheet extends AppCompatActivity {
                     for (DataSnapshot dsp : dataSnapshot.getChildren()) {
                         p1 = dsp.child(student_id).child("p1").getValue().toString().substring(0, 1);
                         p2 = dsp.child(student_id).child("p2").getValue().toString().substring(0, 1);
-                        dates.add(dsp.getKey() + "    " + p1 + "     " + p2 ); //add result into array list
-
+                        p3 = dsp.child(student_id).child("p3").getValue().toString().substring(0, 1);
+                        p4 = dsp.child(student_id).child("p4").getValue().toString().substring(0, 1);
+                        p5 = dsp.child(student_id).child("p5").getValue().toString().substring(0, 1);
+                        p6 = dsp.child(student_id).child("p6").getValue().toString().substring(0, 1);
+                        dates.add(dsp.getKey() + "    " + p1 + "     " + p2+ "     " + p3+ "     " + p4+ "     " + p5+ "     " + p6 ); //add result into array list
 
                       //  Toast.makeText(getApplicationContext(),dsp.child(student_id).child("p1").getValue().toString(),Toast.LENGTH_LONG).show();
-                        if (p1.equals("P")||p2.equals("P")) {
+                        if (p1.equals("P")||p2.equals("P")||p3.equals("P")||p4.equals("P")||p5.equals("P")||p6.equals("P")) {
 
                             P++;
                             count++;
                         }
-                        if(p1.equals("A")||p2.equals("A")) {
+                        if(p1.equals("A")||p2.equals("A")||p3.equals("A")||p4.equals("A")||p5.equals("A")||p6.equals("A")) {
                             A++;
                             count++;
                         }
