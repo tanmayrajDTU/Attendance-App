@@ -143,7 +143,7 @@ public class takeAttendance extends AppCompatActivity {
         String selItems = "";
         periodno = period.getSelectedItem().toString();
         if (periodno.equals("Select Period")) {
-            Toast.makeText(this, "Select a class", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "Please Select a Period", Toast.LENGTH_LONG).show();
 
         } else {
             ref = FirebaseDatabase.getInstance().getReference();
