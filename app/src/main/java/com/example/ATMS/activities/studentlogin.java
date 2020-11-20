@@ -4,6 +4,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.core.app.ActivityCompat;
 import androidx.appcompat.app.AppCompatActivity;
@@ -31,6 +32,7 @@ public class studentlogin extends AppCompatActivity {
     Toolbar mToolbar;
     DatabaseReference ref = FirebaseDatabase.getInstance().getReference();
     DatabaseReference dbStudent;
+    DatabaseReference reff;
     private static long back_pressed;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -78,20 +80,24 @@ public class studentlogin extends AppCompatActivity {
         alertDialog.setTitle("Student Details");
         final String[] message1 = new String[1];
         dbStudent = ref.child("Student");
-        dbStudent.orderByChild("sid").equalTo(message).addListenerForSingleValueEvent(new ValueEventListener() {
+        reff=FirebaseDatabase.getInstance().getReference().child("Student").child(message);
+        reff.addValueEventListener(new ValueEventListener() {
             @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                message1[0] =dataSnapshot.getValue().toString();
-                alertDialog.setMessage(message1[0]);
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                String branch=snapshot.child("classes").getValue().toString();
+                String stu_id=snapshot.child("sid").getValue().toString();
+                String name=snapshot.child("sname").getValue().toString();
+                String passw=snapshot.child("spass").getValue().toString();
+                String message_last=("\nStudent Name:        "+name+"\n\n"+"Student ID:               "+stu_id+"\n\n"+"Student Branch:       "+branch+"\n\n"+"Student Password:  "+passw);
+
+                alertDialog.setMessage(message_last);
                 alertDialog.show();
-                //Toast.makeText(getApplicationContext(),message,Toast.LENGTH_SHORT).show();
             }
 
             @Override
-            public void onCancelled(DatabaseError databaseError) {
-                Toast.makeText(getApplicationContext(), "something went wrong", LENGTH_LONG).show();
+            public void onCancelled(@NonNull DatabaseError error) {
+                Toast.makeText(getApplicationContext(),"Something Went Wrong",LENGTH_LONG).show();
             }
-
         });
     }
 

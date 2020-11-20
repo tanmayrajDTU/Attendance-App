@@ -3,6 +3,7 @@ package com.example.ATMS.activities;
 import android.content.Intent;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.core.app.ActivityCompat;
 import androidx.appcompat.app.AppCompatActivity;
@@ -34,6 +35,7 @@ public class teacherlogin extends AppCompatActivity implements AdapterView.OnIte
     Toolbar mToolbar;
     DatabaseReference ref = FirebaseDatabase.getInstance().getReference();
     DatabaseReference dbTeacher;
+    DatabaseReference reff_2;
     private static long back_pressed;
     String date = new SimpleDateFormat("dd-MM-yyyy").format(new Date());
     @Override
@@ -119,20 +121,24 @@ public class teacherlogin extends AppCompatActivity implements AdapterView.OnIte
         alertDialog.setTitle("Teacher Details");
         final String[] message1 = new String[1];
         dbTeacher = ref.child("Teacher");
-        dbTeacher.orderByChild("tid").equalTo(message).addListenerForSingleValueEvent(new ValueEventListener() {
+        reff_2=FirebaseDatabase.getInstance().getReference().child("Teacher").child(message);
+        reff_2.addValueEventListener(new ValueEventListener() {
             @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                message1[0] =dataSnapshot.getValue().toString();
-                alertDialog.setMessage(message1[0]);
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                String branch=snapshot.child("classes").getValue().toString();
+                String teacher_id=snapshot.child("tid").getValue().toString();
+                String name=snapshot.child("tname").getValue().toString();
+                String passw=snapshot.child("tpass").getValue().toString();
+                String Subject=snapshot.child("subject").getValue().toString();
+                String message_last=("\nTeacher Name:        "+name+"\n\n"+"Teacher ID:              "+teacher_id+"\n\n"+"Teacher Subject:     "+Subject+"\n\n"+"Teacher Branch:      "+branch+"\n\n"+"Teacher Password: "+passw);
+                alertDialog.setMessage(message_last);
                 alertDialog.show();
-                //Toast.makeText(getApplicationContext(),message,Toast.LENGTH_SHORT).show();
             }
 
             @Override
-            public void onCancelled(DatabaseError databaseError) {
-                Toast.makeText(getApplicationContext(), "something went wrong", LENGTH_LONG).show();
+            public void onCancelled(@NonNull DatabaseError error) {
+                Toast.makeText(getApplicationContext(),"Something Went Wrong",LENGTH_LONG).show();
             }
-
         });
     }
 }
