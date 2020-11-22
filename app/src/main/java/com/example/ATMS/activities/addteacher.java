@@ -52,7 +52,7 @@ public class addteacher extends AppCompatActivity {
         tpassword =  (EditText) findViewById(R.id.editText5);
         mToolbar=(Toolbar)findViewById(R.id.ftoolbar);
         setSupportActionBar(mToolbar);
-        getSupportActionBar().setTitle("Add/Remove Teacher");
+        getSupportActionBar().setTitle("Maintain Teacher Details");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
 

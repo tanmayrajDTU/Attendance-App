@@ -45,7 +45,7 @@ public class addstudent extends AppCompatActivity {
         spassword = (EditText) findViewById(R.id.editText4);
         mToolbar = (Toolbar) findViewById(R.id.ftoolbar);
         setSupportActionBar(mToolbar);
-        getSupportActionBar().setTitle("Add/Remove Student");
+        getSupportActionBar().setTitle("Maintain Student Details");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
     }
