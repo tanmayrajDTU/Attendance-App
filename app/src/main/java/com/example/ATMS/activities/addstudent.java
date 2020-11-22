@@ -89,7 +89,8 @@ public class addstudent extends AppCompatActivity {
     }
 
     public void viewStudent(View view) {
-        final AlertDialog alertDialog = new AlertDialog.Builder(this).create(); //Read Update
+        final AlertDialog alertDialog = new AlertDialog.Builder(this,R.style.DialogAnimation).create(); //Read Update
+        alertDialog.getWindow().getAttributes().windowAnimations = R.style.DialogAnimation;
         alertDialog.setTitle("Student Details");
         if (!TextUtils.isEmpty(Sid.getText().toString())) {
             sid = Sid.getText().toString();

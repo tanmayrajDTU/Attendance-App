@@ -1,11 +1,14 @@
 package com.example.ATMS.activities;
 
+import android.content.res.Resources;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+
+import android.text.Html;
 import android.text.TextUtils;
 import android.view.MenuItem;
 import android.view.View;
@@ -89,10 +92,11 @@ public class addteacher extends AppCompatActivity {
         }
     }
     public void viewTeacher(View view) {
-        final AlertDialog alertDialog = new AlertDialog.Builder(this).create(); //Read Update
-        alertDialog.setTitle("Teacher Details");
+        final AlertDialog alertDialog = new AlertDialog.Builder(this,R.style.DialogAnimation).create(); //Read Update
+        alertDialog.getWindow().getAttributes().windowAnimations = R.style.DialogAnimation;
         if (!TextUtils.isEmpty(Tid.getText().toString())) {
             tid = Tid.getText().toString();
+            alertDialog.setTitle("Teacher Details");
             reff_2 = FirebaseDatabase.getInstance().getReference().child("Teacher").child(tid);
             reff_2.addValueEventListener(new ValueEventListener() {
                 @Override
