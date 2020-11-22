@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".activities.teacherlogin"
-    android:background="#FAFAFF">
+    android:background="#121212">
 
     <include
         android:id="@+id/takeattendancebar"
@@ -22,7 +22,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/takeattendancebar"
-        android:layout_marginTop="38dp"
+        android:layout_marginTop="0dp"
         android:focusableInTouchMode="false"
         android:forceHasOverlappingRendering="true"
         android:gravity="center"
@@ -42,15 +42,23 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/textView1"
-        android:layout_marginTop="49dp"
+        android:layout_marginTop="25dp"
         android:layout_marginBottom="10dp"
-        android:background="#000000"
+        android:background="#2D2D2D"
         android:gravity="center"
         android:orientation="vertical"
         android:padding="10dp"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
         >
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/animation_attendance"
+            android:layout_width="250dp"
+            android:layout_height="200dp"
+            android:layout_gravity="center_horizontal"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"
+            app:lottie_rawRes="@raw/data3" />
 
 
         <TextView
@@ -138,6 +146,7 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
                     android:layout_weight="1"
                     android:gravity="center"
                     android:orientation="vertical">
@@ -239,7 +248,7 @@
         android:layout_height="100dp"
         android:layout_below="@id/lay2"
         android:layout_alignParentBottom="true"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="40dp"
         android:background="@drawable/rectangle1">
 
     </LinearLayout>
