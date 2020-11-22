@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".activities.addteacher"
-    android:background="#121212">
+    android:background="#2D2D2D">
 
     <include
         android:id="@+id/ftoolbar"
@@ -21,10 +21,10 @@
         android:layout_below="@+id/ftoolbar"
         android:orientation="vertical"
         android:padding="10dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="20dp"
         android:layout_marginRight="10dp"
         android:layout_marginLeft="10dp"
-        android:background="@drawable/rectangle2"
+        android:background="#121212"
        >
 
     <EditText
@@ -128,7 +128,7 @@
             android:onClick="addTeacher"
             android:text="Add / Update"
             android:textAllCaps="false"
-            android:background="@drawable/button1"
+            android:background="@drawable/button4"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
@@ -169,7 +169,7 @@
                 android:layout_weight="1"
                 android:text="View Teacher Details"
                 android:textAllCaps="false"
-                android:background="@drawable/button1"
+                android:background="@drawable/button5"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintHorizontal_bias="0.832"
                 app:layout_constraintLeft_toLeftOf="parent"
@@ -178,11 +178,13 @@
                 app:layout_constraintVertical_bias="0.863" />
         </LinearLayout>
     </LinearLayout>
-    <LinearLayout
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/animation_attendance"
         android:layout_width="match_parent"
-        android:layout_height="70dp"
+        android:layout_centerHorizontal="true"
+        android:layout_height="140dp"
         android:layout_alignParentBottom="true"
-        android:background="@drawable/rectangle1">
-
-    </LinearLayout>
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/teacher" />
 </RelativeLayout>

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".activities.adminattendance"
-    android:background="#000000">
+    android:background="#121212">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

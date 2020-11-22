@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="#FAFAFF"
+    android:background="#2D2D2D"
     tools:context=".activities.adminlogin">
         <ScrollView
         android:layout_width="fill_parent"
@@ -108,18 +108,18 @@
                         </RelativeLayout>
                     </androidx.cardview.widget.CardView>
                 </RelativeLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="100dp"
-                    android:layout_below="@id/relativelayot"
-                    android:layout_alignParentBottom="true"
-                    android:layout_marginTop="100dp"
-                    android:background="@drawable/rectangle1">
-
-                </LinearLayout>
             </RelativeLayout>
-
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/animation_attendance"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_alignParentBottom="true"
+                android:layout_margin="15dp"
+                android:layout_gravity="center_horizontal"
+                app:lottie_autoPlay="true"
+                app:lottie_loop="true"
+                app:lottie_speed="0.5"
+                app:lottie_rawRes="@raw/login_circle" />
         </LinearLayout>
 
     </ScrollView>

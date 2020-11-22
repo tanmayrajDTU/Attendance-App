@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".activities.addstudent"
-    android:background="#121212">
+    android:background="#2D2D2D">
     <include
         android:id="@+id/ftoolbar"
         layout="@layout/appbar"
@@ -24,7 +24,7 @@
         android:layout_marginLeft="10dp"
         android:layout_marginTop="80dp"
         android:layout_marginRight="10dp"
-        android:background="@drawable/rectangle2"
+        android:background="#121212"
         android:orientation="vertical">
 
         <EditText
@@ -107,7 +107,7 @@
                 android:layout_marginRight="8dp"
                 android:layout_marginBottom="8dp"
                 android:layout_weight="1"
-                android:background="@drawable/button1"
+                android:background="@drawable/button4"
                 android:onClick="addStudent"
                 android:text="Add / Update"
                 android:textAllCaps="false"
@@ -148,7 +148,7 @@
                 android:layout_marginRight="8dp"
                 android:layout_marginBottom="8dp"
                 android:layout_weight="1"
-                android:background="@drawable/button1"
+                android:background="@drawable/button5"
                 android:onClick="viewStudent"
                 android:text="View Student Details"
                 android:textAllCaps="false"
@@ -162,13 +162,14 @@
 
         </LinearLayout>
     </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/animation_attendance"
+        android:layout_width="150dp"
+        android:layout_centerHorizontal="true"
+        android:layout_height="140dp"
         android:layout_alignParentBottom="true"
-        android:background="@drawable/rectangle1">
-
-    </LinearLayout>
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/student" />
 
 </RelativeLayout>
