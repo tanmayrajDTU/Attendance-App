@@ -119,7 +119,6 @@ public class teacherlogin extends AppCompatActivity implements AdapterView.OnIte
     public void profile_t(View view){
         final AlertDialog alertDialog = new AlertDialog.Builder(this).create(); //Read Update
         alertDialog.setTitle("Teacher Details");
-        final String[] message1 = new String[1];
         dbTeacher = ref.child("Teacher");
         reff_2=FirebaseDatabase.getInstance().getReference().child("Teacher").child(message);
         reff_2.addValueEventListener(new ValueEventListener() {

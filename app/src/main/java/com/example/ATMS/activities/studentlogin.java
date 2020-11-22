@@ -78,7 +78,6 @@ public class studentlogin extends AppCompatActivity {
     public void profile_s(View view){
         final AlertDialog alertDialog = new AlertDialog.Builder(this).create(); //Read Update
         alertDialog.setTitle("Student Details");
-        final String[] message1 = new String[1];
         dbStudent = ref.child("Student");
         reff=FirebaseDatabase.getInstance().getReference().child("Student").child(message);
         reff.addValueEventListener(new ValueEventListener() {

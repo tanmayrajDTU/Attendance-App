@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".activities.addstudent"
-    android:background="#FAFAFF">
+    android:background="#121212">
     <include
         android:id="@+id/ftoolbar"
         layout="@layout/appbar"
@@ -22,7 +22,7 @@
         android:layout_below="@+id/ftoolbar"
         android:layout_gravity="center"
         android:layout_marginLeft="10dp"
-        android:layout_marginTop="128dp"
+        android:layout_marginTop="80dp"
         android:layout_marginRight="10dp"
         android:background="@drawable/rectangle2"
         android:orientation="vertical">
@@ -94,11 +94,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="2"
-            android:orientation="horizontal">
+            android:orientation="vertical">
 
             <Button
                 android:id="@+id/button9"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginLeft="8dp"
@@ -121,7 +121,7 @@
 
             <Button
                 android:id="@+id/button8"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="8dp"
                 android:layout_marginTop="8dp"
@@ -131,6 +131,26 @@
                 android:background="@drawable/button1"
                 android:onClick="removeStudent"
                 android:text="Remove"
+                android:textAllCaps="false"
+                android:textColor="#fff"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintHorizontal_bias="0.771"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.778" />
+            <Button
+                android:id="@+id/button42"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginBottom="8dp"
+                android:layout_weight="1"
+                android:background="@drawable/button1"
+                android:onClick="viewStudent"
+                android:text="View Student Details"
                 android:textAllCaps="false"
                 android:textColor="#fff"
                 app:layout_constraintBottom_toBottomOf="parent"
