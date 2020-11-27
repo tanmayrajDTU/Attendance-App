@@ -69,7 +69,19 @@ public class addteacher extends AppCompatActivity {
         classname = classes.getSelectedItem().toString();
         tpass = tpassword.getText().toString();
 
-        if (!(TextUtils.isEmpty(Tid.getText().toString()))) {
+        if(TextUtils.isEmpty(Tname.getText().toString())){
+            Tname.setError("Teacher Name cannot be empty");
+        }
+        else if(TextUtils.isEmpty(Tid.getText().toString())){
+            Tid.setError("Teacher ID cannot be empty");
+        }
+        else if(TextUtils.isEmpty(tpassword.getText().toString())){
+            tpassword.setError("Teacher Password cannot be empty");
+        }
+        else if(TextUtils.isEmpty(sub)){
+            subject.setError("Subject cannot be empty");
+        }
+        else if (!(TextUtils.isEmpty(Tid.getText().toString()))) {
            // String id = databaseTeacher.push().getKey();
             Teacher teacher =new Teacher(tname ,tid ,sub ,classname,tpass);
             databaseTeacher.child(tid).setValue(teacher);

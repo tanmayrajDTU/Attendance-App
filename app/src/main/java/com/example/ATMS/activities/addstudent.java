@@ -51,9 +51,16 @@ public class addstudent extends AppCompatActivity {
     }
 
     public void addStudent(View v) {
-
-
-        if (!(TextUtils.isEmpty(Sid.getText().toString()))) {
+        if(TextUtils.isEmpty(Sname.getText().toString())){
+            Sname.setError("Please Enter Student Name");
+        }
+        else if(TextUtils.isEmpty(Sid.getText().toString())){
+            Sid.setError("Please Enter Student Id");
+        }
+        else if(TextUtils.isEmpty(spassword.getText().toString())){
+            spassword.setError("Please Enter Student Password");
+        }
+        else if (!(TextUtils.isEmpty(Sid.getText().toString()))) {
             //String id = databaseStudent.push().getKey();
             sname = Sname.getText().toString();
             sid = Sid.getText().toString();
@@ -62,7 +69,7 @@ public class addstudent extends AppCompatActivity {
 
             Student student = new Student(sname, sid, classname, spass);
             databaseStudent.child(sid).setValue(student);
-            Toast.makeText(getApplicationContext(), "Student Added Successfully", Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(), "Student Added/Updated Successfully", Toast.LENGTH_LONG).show();
 
         } else {
             Toast.makeText(getApplicationContext(), "Fields Cannot Be Empty", Toast.LENGTH_LONG).show();
