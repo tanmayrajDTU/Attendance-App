@@ -1,5 +1,6 @@
 package com.example.ATMS.activities;
 
+import android.annotation.SuppressLint;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
@@ -34,6 +35,7 @@ public class studentlogin extends AppCompatActivity {
     DatabaseReference dbStudent;
     DatabaseReference reff;
     private static long back_pressed;
+    @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,11 +45,20 @@ public class studentlogin extends AppCompatActivity {
         message = bundle.getString("message");
         mToolbar=(Toolbar)findViewById(R.id.ftoolbar);
         mToolbar.setTitle(message+"'s Dashboard"+"("+date+")");
-        TextView txtView = (TextView) findViewById(R.id.textView1);
+        final TextView txtView = (TextView) findViewById(R.id.textView1);
+        dbStudent = ref.child("Student").child(message);
+        dbStudent.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+               String name =snapshot.child("sname").getValue().toString();
+                txtView.setText("Welcome : "+ name);
+            }
 
-
-        txtView.setText("Welcome :"+message);
-
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                Toast.makeText(getApplicationContext(),"Something Went Wrong",LENGTH_LONG).show();
+            }
+        });
     }
     public void viewAttendance(View v){
         Bundle basket = new Bundle();
@@ -88,8 +99,11 @@ public class studentlogin extends AppCompatActivity {
                 String stu_id=snapshot.child("sid").getValue().toString();
                 String name=snapshot.child("sname").getValue().toString();
                 String passw=snapshot.child("spass").getValue().toString();
-                String message_last=("\nStudent Name:        "+name+"\n\n"+"Student ID:               "+stu_id+"\n\n"+"Student Branch:       "+branch+"\n\n"+"Student Password:  "+passw);
-
+                String email=snapshot.child("email").getValue().toString();
+                String phone=snapshot.child("phone").getValue().toString();
+                String message_last = ("\nStudent Name:        " + name + "\n\n" + "Student ID:               " + stu_id
+                        + "\n\n" + "Student Branch:       " + branch + "\n\n" + "Student Password:  " + passw
+                        +"\n\nEmail Address:     "+email+"\n\nPhone Number:     "+phone);
                 alertDialog.setMessage(message_last);
                 alertDialog.show();
             }
@@ -101,4 +115,11 @@ public class studentlogin extends AppCompatActivity {
         });
     }
 
+    public void viewOverall(View view) {
+        Bundle basket = new Bundle();
+        basket.putString("sid", message);
+        Intent intent = new Intent(this, overallAttendance.class);
+        intent.putExtras(basket);
+        startActivity(intent);
+    }
 }

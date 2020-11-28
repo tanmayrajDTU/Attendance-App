@@ -35,6 +35,7 @@
         <activity android:name=".activities.admin_attendanceSheet" />
         <activity android:name=".activities.teacher_attendanceSheet" />
         <activity android:name=".activities.student_attendance_sheet" />
+        <activity android:name=".activities.overallAttendance" />
     </application>
 
 </manifest>

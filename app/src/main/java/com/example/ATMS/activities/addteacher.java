@@ -25,6 +25,8 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.regex.Pattern;
+
 import static android.widget.Toast.LENGTH_LONG;
 
 
@@ -32,12 +34,22 @@ public class addteacher extends AppCompatActivity {
     EditText Tname;
     EditText Tid;
     EditText subject,tpassword;
-    String tname,tid,sub,classname,tpass;
+    EditText email,phone_no;
+    String tname,tid,sub,classname,tpass,e_mail,phone;
     Spinner classes;
     Button addButton;
     DatabaseReference databaseTeacher;
     DatabaseReference reff_2;
     Toolbar mToolbar;
+    boolean isEmailValid(CharSequence email) {
+        return android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches();
+    }
+    private boolean isValidMobile(String phone) {
+        if(!Pattern.matches("[a-zA-Z]+", phone)) {
+            return phone.length() == 10;
+        }
+        return false;
+    }
 
 
     @Override
@@ -51,8 +63,9 @@ public class addteacher extends AppCompatActivity {
         Tid =  (EditText) findViewById(R.id.editText3);
         subject =  (EditText) findViewById(R.id.editText4);
         classes = (Spinner) findViewById(R.id.spinner3);
-        classes = (Spinner) findViewById(R.id.spinner3);
         tpassword =  (EditText) findViewById(R.id.editText5);
+        email=(EditText)findViewById(R.id.editText8);
+        phone_no=(EditText)findViewById(R.id.editText9);
         mToolbar=(Toolbar)findViewById(R.id.ftoolbar);
         setSupportActionBar(mToolbar);
         getSupportActionBar().setTitle("Maintain Teacher Details");
@@ -68,7 +81,8 @@ public class addteacher extends AppCompatActivity {
         sub = subject.getText().toString();
         classname = classes.getSelectedItem().toString();
         tpass = tpassword.getText().toString();
-
+        e_mail=email.getText().toString();
+        phone=phone_no.getText().toString();
         if(TextUtils.isEmpty(Tname.getText().toString())){
             Tname.setError("Teacher Name cannot be empty");
         }
@@ -78,12 +92,24 @@ public class addteacher extends AppCompatActivity {
         else if(TextUtils.isEmpty(tpassword.getText().toString())){
             tpassword.setError("Teacher Password cannot be empty");
         }
+        else if(TextUtils.isEmpty(email.getText().toString())){
+            email.setError("Email cannot be empty");
+        }
+        else if(!isEmailValid(e_mail)){
+            email.setError("Email id is invalid ");
+        }
+        else if(TextUtils.isEmpty(phone_no.getText().toString())){
+            phone_no.setError("Phone Number cannot be empty");
+        }
+        else if(!isValidMobile(phone)){
+            phone_no.setError("Phone Number is Invalid");
+        }
         else if(TextUtils.isEmpty(sub)){
             subject.setError("Subject cannot be empty");
         }
         else if (!(TextUtils.isEmpty(Tid.getText().toString()))) {
            // String id = databaseTeacher.push().getKey();
-            Teacher teacher =new Teacher(tname ,tid ,sub ,classname,tpass);
+            Teacher teacher =new Teacher(tname ,tid ,sub ,classname,tpass,e_mail,phone);
             databaseTeacher.child(tid).setValue(teacher);
             Toast.makeText(getApplicationContext(),"Teacher Added Successfully", Toast.LENGTH_LONG).show();
             finish();
@@ -118,7 +144,11 @@ public class addteacher extends AppCompatActivity {
                     String name = snapshot.child("tname").getValue().toString();
                     String passw = snapshot.child("tpass").getValue().toString();
                     String Subject = snapshot.child("subject").getValue().toString();
-                    String message_last = ("\nTeacher Name:        " + name + "\n\n" + "Teacher ID:              " + teacher_id + "\n\n" + "Teacher Subject:     " + Subject + "\n\n" + "Teacher Branch:      " + branch + "\n\n" + "Teacher Password: " + passw);
+                    String phone=snapshot.child("phone").getValue().toString();
+                    String email=snapshot.child("email").getValue().toString();
+                    String message_last = ("\nTeacher Name:        " + name + "\n\n" + "Teacher ID:              " + teacher_id + "\n\n" +
+                            "Teacher Subject:     " + Subject + "\n\n" + "Teacher Branch:      " + branch + "\n\n" + "Teacher Password: " + passw
+                            +"\n\nPhone Number:     "+phone+"\n\nEmail Address:    "+email);
                     alertDialog.setMessage(message_last);
                     alertDialog.show();
                 }

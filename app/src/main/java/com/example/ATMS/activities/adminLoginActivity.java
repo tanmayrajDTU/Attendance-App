@@ -72,18 +72,16 @@ public class adminLoginActivity extends AppCompatActivity {
             Toast.makeText(getApplicationContext(),"Username Cannot Be Empty", Toast.LENGTH_LONG).show();
         }
         else if (userid.equals("Admin") && pass.equalsIgnoreCase(this.dbpassword) ) {
-            //  if (userid.equalsIgnoreCase("admin") && pass.equals("admin")) {
             mDialog.dismiss();
             Intent intent = new Intent(this, adminlogin.class);
             intent.putExtras(basket);
             startActivity(intent);
             Toast.makeText(getApplicationContext(), "Login Successful", Toast.LENGTH_LONG).show();
             finish();
-            //  }
         }
         else
         {
-            Toast.makeText(getApplicationContext(), "Please Enter valid user id or password", Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(), "Please Enter Valid User ID And Password", Toast.LENGTH_LONG).show();
         }
     }
 }

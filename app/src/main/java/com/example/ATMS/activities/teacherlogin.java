@@ -52,8 +52,20 @@ public class teacherlogin extends AppCompatActivity implements AdapterView.OnIte
         setSupportActionBar(mToolbar);
         getSupportActionBar().setTitle(message+"'s Dashboard  - "+date);
 
-        TextView txtView = (TextView) findViewById(R.id.textView1);
-        txtView.setText("Welcome : "+message);
+        final TextView txtView = (TextView) findViewById(R.id.textView1);
+        dbTeacher = ref.child("Teacher").child(message);
+        dbTeacher.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                String name =snapshot.child("tname").getValue().toString();
+                txtView.setText("Welcome : "+ name);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                Toast.makeText(getApplicationContext(),"Something Went Wrong",LENGTH_LONG).show();
+            }
+        });
         spinner2.setOnItemSelectedListener((AdapterView.OnItemSelectedListener) this);
         List<String> categories = new ArrayList<String>();
         categories.add("SE");
@@ -130,7 +142,11 @@ public class teacherlogin extends AppCompatActivity implements AdapterView.OnIte
                 String name=snapshot.child("tname").getValue().toString();
                 String passw=snapshot.child("tpass").getValue().toString();
                 String Subject=snapshot.child("subject").getValue().toString();
-                String message_last=("\nTeacher Name:        "+name+"\n\n"+"Teacher ID:              "+teacher_id+"\n\n"+"Teacher Subject:     "+Subject+"\n\n"+"Teacher Branch:      "+branch+"\n\n"+"Teacher Password: "+passw);
+                String phone=snapshot.child("phone").getValue().toString();
+                String email=snapshot.child("email").getValue().toString();
+                String message_last = ("\nTeacher Name:        " + name + "\n\n" + "Teacher ID:              " + teacher_id + "\n\n" +
+                        "Teacher Subject:     " + Subject + "\n\n" + "Teacher Branch:      " + branch + "\n\n" + "Teacher Password: " + passw
+                        +"\n\nPhone Number:     "+phone+"\n\nEmail Address:    "+email);
                 alertDialog.setMessage(message_last);
                 alertDialog.show();
             }

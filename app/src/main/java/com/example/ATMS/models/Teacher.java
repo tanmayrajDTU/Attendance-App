@@ -7,17 +7,21 @@ public class Teacher {
     String subject;
     String classes;
     String tpass;
+    String email;
+    String phone;
 
   /*  public Teacher(String tname, String tid, EditText subject, Spinner classes){
 
     }*/
 
-    public Teacher(String tname, String tid, String subject, String classes, String tpass) {
+    public Teacher(String tname, String tid, String subject, String classes, String tpass,String email,String phone) {
         this.tname = tname;
         this.tid = tid;
         this.subject = subject;
         this.classes = classes;
         this.tpass = tpass;
+        this.email=email;
+        this.phone=phone;
     }
 
     public String getTname() {
@@ -39,5 +43,8 @@ public class Teacher {
     public String gettpass() {
         return tpass;
     }
+
+    public String getEmail(){return email;}
+    public String getPhone(){return  phone;}
 
 }
