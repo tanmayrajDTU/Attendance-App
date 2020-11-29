@@ -24,11 +24,11 @@
         <item name="android:windowEnterAnimation">@android:anim/slide_in_left</item>
         <item name="android:windowExitAnimation">@android:anim/slide_out_right</item>
         <item name="android:windowNoTitle">true</item>
-        <item name="android:textColor">#0000FF</item>
+        <item name="android:textColor">#2B8CDA</item>
         <item name="android:textStyle">bold</item>
         <item name="android:typeface">normal</item>
         <item name="android:background">#121212</item>
-        <item name="android:textColorPrimary">#0000FF</item>
+        <item name="android:textColorPrimary">#2B8CDA</item>
         
     </style>
 </resources>
