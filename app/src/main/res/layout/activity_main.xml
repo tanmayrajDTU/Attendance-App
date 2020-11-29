@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".activities.MainActivity"
     tools:layout_editor_absoluteX="0dp"
-    android:background="#E4D9FF"
+    android:background="#BBCED1"
     android:layout_gravity="center"
     android:orientation="vertical"
     android:gravity="center"

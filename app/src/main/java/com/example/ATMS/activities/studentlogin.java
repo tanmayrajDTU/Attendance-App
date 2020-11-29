@@ -115,11 +115,8 @@ public class studentlogin extends AppCompatActivity {
         });
     }
 
-    public void viewOverall(View view) {
-        Bundle basket = new Bundle();
-        basket.putString("sid", message);
-        Intent intent = new Intent(this, overallAttendance.class);
-        intent.putExtras(basket);
-        startActivity(intent);
+    public void exitButton(View view) {
+        studentlogin.this.finish();
+        System.exit(0);
     }
 }
