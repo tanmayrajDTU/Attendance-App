@@ -27,8 +27,8 @@
         android:forceHasOverlappingRendering="true"
         android:gravity="center"
         android:padding="6dp"
-        android:text="Welcome "
-        android:textColor="#ffff"
+        android:text="Welcome: "
+        android:textColor="#ffffff"
 
         android:textSize="30dp"
         app:layout_constraintBottom_toBottomOf="parent"

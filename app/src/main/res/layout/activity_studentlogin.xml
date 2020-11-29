@@ -23,7 +23,7 @@
         android:layout_gravity="center"
         android:background="@drawable/rectangle"
         android:gravity="center"
-        android:text="Welcome:id"
+        android:text="Welcome: id"
         android:textColor="#fff"
         android:textSize="25dp"
         />

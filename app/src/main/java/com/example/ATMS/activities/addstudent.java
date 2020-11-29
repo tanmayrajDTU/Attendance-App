@@ -3,6 +3,8 @@ package com.example.ATMS.activities;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.DialogInterface;
 import android.os.Bundle;
 import androidx.appcompat.widget.Toolbar;
 import android.text.TextUtils;
@@ -105,10 +107,29 @@ public class addstudent extends AppCompatActivity {
 
     public void removeStudent(View v) {
         if (!TextUtils.isEmpty(Sid.getText().toString())) {
-            sid = Sid.getText().toString();
-            databaseStudent.child(sid).setValue(null);
-            Toast.makeText(getApplicationContext(), "Student Removed Successfully", Toast.LENGTH_LONG).show();
+            AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(addstudent.this);
+            alertDialogBuilder.setTitle(getTitle());
+            alertDialogBuilder.setMessage("Confirm Delete ?");
 
+            alertDialogBuilder.setPositiveButton("Yes",new DialogInterface.OnClickListener() {
+                public void onClick(DialogInterface dialog,int id) {
+                    sid = Sid.getText().toString();
+                    databaseStudent.child(sid).setValue(null);
+                    Toast.makeText(getApplicationContext(), "Student Removed Successfully", Toast.LENGTH_LONG).show();
+
+                }
+
+            });
+            alertDialogBuilder.setNegativeButton("No",new DialogInterface.OnClickListener() {
+                public void onClick(DialogInterface dialog,int id) {
+                    // cancel the alert box and put a Toast to the user
+                    dialog.cancel();
+                    Toast.makeText(getApplicationContext(), "You Chose Not To Delete",
+                            Toast.LENGTH_LONG).show();
+                }
+            });
+            AlertDialog alert = alertDialogBuilder.create();
+            alert.show();
         } else {
             Toast.makeText(getApplicationContext(), "ID Cannot Be Empty", Toast.LENGTH_LONG).show();
         }

@@ -1,5 +1,6 @@
 package com.example.ATMS.activities;
 
+import android.content.DialogInterface;
 import android.content.res.Resources;
 import android.os.Bundle;
 
@@ -120,11 +121,29 @@ public class addteacher extends AppCompatActivity {
     }
     public void removeTeacher(View v){
         if (!TextUtils.isEmpty(Tid.getText().toString())) {
-            tid = Tid.getText().toString();
-            databaseTeacher.child(tid).setValue(null);
-            Toast.makeText(getApplicationContext(),"Teacher Removed Successfully", Toast.LENGTH_LONG).show();
-            finish();
+            AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(addteacher.this);
+            alertDialogBuilder.setTitle(getTitle());
+            alertDialogBuilder.setMessage("Confirm Delete ?");
 
+            alertDialogBuilder.setPositiveButton("Yes",new DialogInterface.OnClickListener() {
+                public void onClick(DialogInterface dialog,int id) {
+                    tid = Tid.getText().toString();
+                    databaseTeacher.child(tid).setValue(null);
+                    Toast.makeText(getApplicationContext(),"Teacher Removed Successfully", Toast.LENGTH_LONG).show();
+                    finish();
+                }
+
+            });
+            alertDialogBuilder.setNegativeButton("No",new DialogInterface.OnClickListener() {
+                public void onClick(DialogInterface dialog,int id) {
+                    // cancel the alert box and put a Toast to the user
+                    dialog.cancel();
+                    Toast.makeText(getApplicationContext(), "You Chose Not To Delete",
+                            Toast.LENGTH_LONG).show();
+                }
+            });
+            AlertDialog alert = alertDialogBuilder.create();
+            alert.show();
         }else {
             Toast.makeText(getApplicationContext(),"ID Cannot Be Empty", Toast.LENGTH_LONG).show();
         }
