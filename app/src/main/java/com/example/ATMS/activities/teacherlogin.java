@@ -1,16 +1,23 @@
 package com.example.ATMS.activities;
 
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AlertDialog;
 import androidx.core.app.ActivityCompat;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+
+import android.text.TextUtils;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -34,7 +41,7 @@ public class teacherlogin extends AppCompatActivity implements AdapterView.OnIte
     String message;
     Toolbar mToolbar;
     DatabaseReference ref = FirebaseDatabase.getInstance().getReference();
-    DatabaseReference dbTeacher;
+    DatabaseReference dbTeacher,dbFaculty;
     DatabaseReference reff_2;
     private static long back_pressed;
     String date = new SimpleDateFormat("dd-MM-yyyy").format(new Date());
@@ -156,5 +163,41 @@ public class teacherlogin extends AppCompatActivity implements AdapterView.OnIte
                 Toast.makeText(getApplicationContext(),"Something Went Wrong",LENGTH_LONG).show();
             }
         });
+    }
+    @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
+    public void changePassword(View view) {
+        dbFaculty=ref.child("Teacher").child(message).child("tpass");
+
+        android.app.AlertDialog.Builder alertDialog = new android.app.AlertDialog.Builder(this);
+        alertDialog.setTitle("Set Your New Password");
+        final LayoutInflater inflater = this.getLayoutInflater();
+        View add_menu_layout = inflater.inflate(R.layout.changepassword, null);
+        final EditText password=(EditText)add_menu_layout.findViewById(R.id.newpassword);
+        alertDialog.setView(add_menu_layout);
+        alertDialog.setPositiveButton("YES", new DialogInterface.OnClickListener() {
+
+            @Override
+            public void onClick(final DialogInterface dialog, int which) {
+                if (!TextUtils.isEmpty(password.getText().toString()))
+                {
+                    dbFaculty.setValue(password.getText().toString());
+                    Toast.makeText(teacherlogin.this, "Password Changed Successfully", Toast.LENGTH_SHORT).show();
+                }
+                else
+                {
+                    Toast.makeText(teacherlogin.this, "Please Enter The New Password", Toast.LENGTH_SHORT).show();
+                }
+
+
+
+            }
+        });
+        alertDialog.setNegativeButton("NO", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.dismiss();
+            }
+        });
+        alertDialog.show();
     }
 }
